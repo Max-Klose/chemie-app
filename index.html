@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102e40"><title>Chemie · Schalenmodell</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%23102e40' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23e74739'/%3E%3Ccircle cx='59' cy='32' r='5' fill='%231588a2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="menu" class="menu">
+  <div class="eyebrow">ENTDECKEN & VERSTEHEN</div><h1>Chemie</h1><p class="intro">Kleine Teilchen. Große Zusammenhänge.</p>
+  <button id="start" class="module"><span class="module-icon" aria-hidden="true">⚛</span><span><strong>Schalenmodell</strong><span>Elektronen aufnehmen und abgeben</span></span><span aria-hidden="true">→</span></button>
+  <p class="menu-note">Wasserstoff bis Calcium · 20 Elemente</p>
+</main>
+<main id="app" hidden>
+  <header><button id="back" class="quiet">← Hauptmenü</button><span class="eyebrow">SCHALENMODELL</span><button id="reset" class="quiet">Zum Atom</button></header>
+  <section class="workspace">
+    <div class="heading"><div><div id="number" class="eyebrow"></div><h1><span id="name"></span><span id="kind" class="kind"></span></h1></div><div id="symbol" class="symbol" aria-label="Elementsymbol"></div></div>
+    <div class="diagram"><svg id="atom" viewBox="0 0 640 560" role="img" aria-label="Schalenmodell"></svg></div>
+    <div class="counts" aria-live="polite"><span><i class="proton"></i><strong id="protons"></strong> Protonen</span><span><i class="electron"></i><strong id="electrons"></strong> Elektronen</span><span id="charge" class="charge"></span></div>
+    <div class="controls"><div class="element-controls"><button id="prev" aria-label="Vorheriges Element">←</button><label>Element<select id="element" aria-label="Element auswählen"></select></label><button id="next" aria-label="Nächstes Element">→</button></div><div class="electron-controls"><button id="remove">− <span>Elektron abgeben</span></button><button id="add">+ <span>Elektron aufnehmen</span></button></div></div>
+    <div class="footer"><p id="hint" aria-live="polite"></p><p>Theoretisches Modell · Auch ungewöhnliche Ionen sind möglich.</p></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body></html>
