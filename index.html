@@ -2,15 +2,17 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#102e40"><title>Chemie · Schalenmodell</title>
+<meta name="theme-color" content="#102e40"><title>Chemie · Modelle & Strukturformeln</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%23102e40' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23e74739'/%3E%3Ccircle cx='59' cy='32' r='5' fill='%231588a2'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="structure.css">
 </head>
 <body>
 <main id="menu" class="menu">
   <div class="eyebrow">ENTDECKEN & VERSTEHEN</div><h1>Chemie</h1><p class="intro">Kleine Teilchen. Große Zusammenhänge.</p>
   <button id="start" class="module"><span class="module-icon" aria-hidden="true">⚛</span><span><strong>Schalenmodell</strong><span>Elektronen aufnehmen und abgeben</span></span><span aria-hidden="true">→</span></button>
   <p class="menu-note">Wasserstoff bis Calcium · 20 Elemente</p>
+  <button id="structure-start" class="module"><span class="module-icon" aria-hidden="true">C–H</span><span><strong>Strukturformelzeichner</strong><span>Atome verbinden und Moleküle aufbauen</span></span><span aria-hidden="true">→</span></button>
 </main>
 <main id="app" hidden>
   <header><button id="back" class="quiet">← Hauptmenü</button><span class="eyebrow">SCHALENMODELL</span><button id="reset" class="quiet">Zum Atom</button></header>
@@ -22,5 +24,17 @@
     <div class="footer"><p id="hint" aria-live="polite"></p><p>Theoretisches Modell · Auch ungewöhnliche Ionen sind möglich.</p></div>
   </section>
 </main>
+<main id="structure" hidden>
+ <header><button id="structure-back" class="quiet">← Hauptmenü</button><span class="eyebrow">STRUKTURFORMELZEICHNER</span><label class="mode"><span id="mode-label">Unterstützt</span><input id="assisted" type="checkbox" role="switch" checked aria-label="Unterstütztes Ausrichten"><span class="toggle" aria-hidden="true"></span></label></header>
+ <section class="drawing-workspace">
+  <div class="drawing-toolbar"><div><button id="undo" class="quiet" disabled>↶ Zurück</button><button id="fit" class="quiet">Alles anzeigen</button></div><div><button id="delete-mode" class="quiet" aria-pressed="false">Entfernen</button><button id="clear-drawing" class="quiet">Leeren</button></div></div>
+  <div class="drawing-field"><svg id="drawing" viewBox="0 0 1100 680" aria-label="Zeichenfläche für Strukturformeln"></svg><p id="drawing-empty">Ziehe ein Element auf die Zeichenfläche.<br><span>Oder wähle ein Element und tippe auf die Fläche.</span></p></div>
+  <div id="palette" class="palette" aria-label="Elemente"></div>
+  <p id="drawing-status" role="status">Zwei einzelne Elektronen antippen, um eine Bindung zu bilden.</p>
+  <details class="drawing-help"><summary>So funktioniert’s</summary><p>Element ziehen oder auswählen und auf die Fläche tippen. Atom antippen: freie Elektronen drehen. Atom kurz halten: Bewegungsmodus; anschließend ziehen und durch Antippen wieder einrasten. Zwei Punkte verschiedener Atome antippen: Bindung. Weitere Punkte derselben Atome verbinden: Doppel- oder Dreifachbindung.</p><p>„Unterstützt“ richtet Bindungen und Elektronengruppen aus. „Frei“ lässt die Positionen unverändert. Unter „Entfernen“ eine Bindung oder ein Atom antippen; „Zurück“ macht Änderungen rückgängig. Die Darstellung ist ein ebenes Lewis-Modell, keine räumliche Molekülgeometrie.</p></details>
+ </section>
+</main>
 <script src="app.js"></script>
+<script src="structure-model.js"></script>
+<script src="structure.js"></script>
 </body></html>
